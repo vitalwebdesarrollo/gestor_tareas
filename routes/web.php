@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/registro', function () {
+    return view('auth.registro');
+});
+
+Route::post('/registro', [RegistroController::class, 'registro']);
