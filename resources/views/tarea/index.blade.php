@@ -37,9 +37,10 @@
                                         <th>No</th>
                                         
 										<th>Descripcion</th>
+										<th>Description</th>
 										<th>Fecha De Inicio</th>
-										<th>Horas Estimadas</th>
-										<th>Empleado Id</th>
+										<th>Hora Estimada</th>
+										<th>Categoria Id</th>
 										<th>Finalizado</th>
 
                                         <th></th>
@@ -50,10 +51,11 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $tarea->Descripcion }}</td>
+											<td>{{ $tarea->descripcion }}</td>
+											<td>{{ $tarea->description }}</td>
 											<td>{{ $tarea->fecha de inicio }}</td>
-											<td>{{ $tarea->Horas estimadas }}</td>
-											<td>{{ $tarea->empleado_id }}</td>
+											<td>{{ $tarea->hora estimada }}</td>
+											<td>{{ $tarea->categoria_id }}</td>
 											<td>{{ $tarea->finalizado }}</td>
 
                                             <td>
