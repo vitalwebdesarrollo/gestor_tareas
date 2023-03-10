@@ -16,11 +16,16 @@
             {{ Form::number('hora_estimada', $tarea->hora_estimada, ['class' => 'form-control' . ($errors->has('hora_estimada') ? ' is-invalid' : ''), 'placeholder' => 'Hora Estimada']) }}
             {!! $errors->first('hora_estimada', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+      
+        <!-- Select de lista de los empleados que se vayan creando -->
         <div class="form-group">
             {{ Form::label('Asignado a') }}
-            {{ Form::text('empleado_id', $tarea->empleado_id, ['class' => 'form-control' . ($errors->has('empleado_id') ? ' is-invalid' : ''), 'placeholder' => 'Empleado Id']) }}
-            {!! $errors->first('empleado_id', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::select('empleado_id', $empleado, $tarea->empleado_id, ['class' => 'form-control' . ($errors->has('empleado_id') ? ' is-invalid' : ''), 'placeholder' => 'Empleado Id']) }}
+            {!! $errors->first('empleado_id', '<div class="invalid-feedback">:message</div>') !!}  
+            
         </div>
+
+
         <div class="form-group">
             {{ Form::label('finalizada') }}
             {{ Form::checkbox('finalizada', $tarea->finalizada, ['class' => 'form-control' . ($errors->has('finalizada') ? ' is-invalid' : ''), 'placeholder' => 'Finalizada']) }}

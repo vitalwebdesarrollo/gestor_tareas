@@ -14,15 +14,16 @@ class CreateTareasTable extends Migration
     public function up()
     {
         Schema::create('tareas', function (Blueprint $table) {
-            $table->increments('id');
+            $table->engine = "InnoDB";
+            $table->bigIncrements('id');
             $table->longText('descripcion');
             $table->DateTime('fecha_inicio');
             $table->string('hora_estimada');
-            $table->unsignedBigInteger('empleado_id');
+            $table->bigInteger('empleado_id')->unsigned();
             $table->boolean('finalizada')->nullable();
             $table->timestamps();
 
-            $table->foreign('empleado_id')->references('id')->on('empleados');
+            $table->foreign('empleado_id')->references('id')->on('empleados')->onDelete("cascade");
         });
     }
 

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Tarea;
+use App\Models\Empleado;
 use Illuminate\Http\Request;
+
 
 /**
  * Class TareaController
@@ -32,7 +34,8 @@ class TareaController extends Controller
     public function create()
     {
         $tarea = new Tarea();
-        return view('tarea.create', compact('tarea'));
+        $empleado = Empleado::pluck('nombre','id');
+        return view('tarea.create', compact('tarea','empleado'));
     }
 
     /**
@@ -73,8 +76,9 @@ class TareaController extends Controller
     public function edit($id)
     {
         $tarea = Tarea::find($id);
+        $empleado = Empleado::pluck('nombre','id');
 
-        return view('tarea.edit', compact('tarea'));
+        return view('tarea.edit', compact('tarea','empleado'));
     }
 
     /**

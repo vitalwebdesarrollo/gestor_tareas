@@ -38,7 +38,7 @@
                                         
 										<th>Descripcion</th>
 										<th>Fecha Inicio</th>
-										<th>Hora Estimada</th>
+										<th>Hora Estimada (Horas)</th>
 										<th>Asignado a</th>
 										<th>Finalizada</th>
 
@@ -53,7 +53,7 @@
 											<td>{{ $tarea->descripcion }}</td>
 											<td>{{ $tarea->fecha_inicio }}</td>
 											<td>{{ $tarea->hora_estimada }}</td>
-											<td>{{ $tarea->empleado_id }}</td>
+											<td>{{ $tarea->empleado->nombre }}</td>
 											<td>{{ $tarea->finalizada }}</td>
 
                                             <td>

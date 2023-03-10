@@ -38,6 +38,13 @@ class Tarea extends Model
      */
     protected $fillable = ['descripcion','fecha_inicio','hora_estimada','empleado_id','finalizada'];
 
+//**Asignacion de relación en el modelo
 
+/** 
+ * * @return \Illuminate\Database\Eloquent\Relations\HasOne
+*/
+public function empleado(){
+  return $this->hasOne('App\Models\Empleado','id','empleado_id');
+}
 
 }
