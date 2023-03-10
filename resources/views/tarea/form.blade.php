@@ -7,29 +7,24 @@
             {!! $errors->first('descripcion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('description') }}
-            {{ Form::text('description', $tarea->description, ['class' => 'form-control' . ($errors->has('description') ? ' is-invalid' : ''), 'placeholder' => 'Description']) }}
-            {!! $errors->first('description', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('fecha_inicio') }}
+            {{ Form::date('fecha_inicio', $tarea->fecha_inicio, ['class' => 'form-control' . ($errors->has('fecha_inicio') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Inicio']) }}
+            {!! $errors->first('fecha_inicio', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('fecha de inicio') }}
-            {{ Form::text('fecha de inicio', $tarea->fecha de inicio, ['class' => 'form-control' . ($errors->has('fecha de inicio') ? ' is-invalid' : ''), 'placeholder' => 'Fecha De Inicio']) }}
-            {!! $errors->first('fecha de inicio', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('hora_estimada') }}
+            {{ Form::number('hora_estimada', $tarea->hora_estimada, ['class' => 'form-control' . ($errors->has('hora_estimada') ? ' is-invalid' : ''), 'placeholder' => 'Hora Estimada']) }}
+            {!! $errors->first('hora_estimada', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('hora estimada') }}
-            {{ Form::text('hora estimada', $tarea->hora estimada, ['class' => 'form-control' . ($errors->has('hora estimada') ? ' is-invalid' : ''), 'placeholder' => 'Hora Estimada']) }}
-            {!! $errors->first('hora estimada', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('Asignado a') }}
+            {{ Form::text('empleado_id', $tarea->empleado_id, ['class' => 'form-control' . ($errors->has('empleado_id') ? ' is-invalid' : ''), 'placeholder' => 'Empleado Id']) }}
+            {!! $errors->first('empleado_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('categoria_id') }}
-            {{ Form::text('categoria_id', $tarea->categoria_id, ['class' => 'form-control' . ($errors->has('categoria_id') ? ' is-invalid' : ''), 'placeholder' => 'Categoria Id']) }}
-            {!! $errors->first('categoria_id', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('finalizado') }}
-            {{ Form::text('finalizado', $tarea->finalizado, ['class' => 'form-control' . ($errors->has('finalizado') ? ' is-invalid' : ''), 'placeholder' => 'Finalizado']) }}
-            {!! $errors->first('finalizado', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('finalizada') }}
+            {{ Form::checkbox('finalizada', $tarea->finalizada, ['class' => 'form-control' . ($errors->has('finalizada') ? ' is-invalid' : ''), 'placeholder' => 'Finalizada']) }}
+            {!! $errors->first('finalizada', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>

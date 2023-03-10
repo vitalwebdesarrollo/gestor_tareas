@@ -9,11 +9,10 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property $id
  * @property $descripcion
- * @property $description
- * @property $fecha de inicio
- * @property $hora estimada
- * @property $categoria_id
- * @property $finalizado
+ * @property $fecha_inicio
+ * @property $hora_estimada
+ * @property $empleado_id
+ * @property $finalizada
  * @property $created_at
  * @property $updated_at
  *
@@ -25,10 +24,9 @@ class Tarea extends Model
     
     static $rules = [
 		'descripcion' => 'required',
-		'description' => 'required',
-		'fecha de inicio' => 'required',
-		'hora estimada' => 'required',
-		'categoria_id' => 'required',
+		'fecha_inicio' => 'required',
+		'hora_estimada' => 'required',
+		'empleado_id' => 'required',
     ];
 
     protected $perPage = 20;
@@ -38,7 +36,7 @@ class Tarea extends Model
      *
      * @var array
      */
-    protected $fillable = ['descripcion','description','fecha de inicio','hora estimada','categoria_id','finalizado'];
+    protected $fillable = ['descripcion','fecha_inicio','hora_estimada','empleado_id','finalizada'];
 
 
 

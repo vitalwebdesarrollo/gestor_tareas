@@ -2,15 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadoController;
-use App\Http\Controllers\tareaController;
+use App\Http\Controllers\TareaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
@@ -18,11 +18,8 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::resource('/empleado', EmpleadoController::class)->middleware('auth');
-Route::resource('/tarea', tareaController::class)->middleware('auth');
-
+Route::resource('/empleados', EmpleadoController::class)->middleware('auth');
+Route::resource('/tareas', TareaController::class)->middleware('auth');

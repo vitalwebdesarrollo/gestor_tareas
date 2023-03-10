@@ -25,24 +25,20 @@
                             {{ $tarea->descripcion }}
                         </div>
                         <div class="form-group">
-                            <strong>Description:</strong>
-                            {{ $tarea->description }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Fecha De Inicio:</strong>
-                            {{ $tarea->fecha de inicio }}
+                            <strong>Fecha Inicio:</strong>
+                            {{ $tarea->fecha_inicio }}
                         </div>
                         <div class="form-group">
                             <strong>Hora Estimada:</strong>
-                            {{ $tarea->hora estimada }}
+                            {{ $tarea->hora_estimada }}
                         </div>
                         <div class="form-group">
-                            <strong>Categoria Id:</strong>
-                            {{ $tarea->categoria_id }}
+                            <strong>Asignado a:</strong>
+                            {{ $tarea->empleado_id }}
                         </div>
                         <div class="form-group">
-                            <strong>Finalizado:</strong>
-                            {{ $tarea->finalizado }}
+                            <strong>Finalizada:</strong>
+                            {{ $tarea->finalizada }}
                         </div>
 
                     </div>

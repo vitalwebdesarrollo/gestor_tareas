@@ -18,7 +18,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('tareas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear nueva tarea') }}
                                 </a>
                               </div>
                         </div>
@@ -37,11 +37,10 @@
                                         <th>No</th>
                                         
 										<th>Descripcion</th>
-										<th>Description</th>
-										<th>Fecha De Inicio</th>
+										<th>Fecha Inicio</th>
 										<th>Hora Estimada</th>
-										<th>Categoria Id</th>
-										<th>Finalizado</th>
+										<th>Asignado a</th>
+										<th>Finalizada</th>
 
                                         <th></th>
                                     </tr>
@@ -52,19 +51,18 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $tarea->descripcion }}</td>
-											<td>{{ $tarea->description }}</td>
-											<td>{{ $tarea->fecha de inicio }}</td>
-											<td>{{ $tarea->hora estimada }}</td>
-											<td>{{ $tarea->categoria_id }}</td>
-											<td>{{ $tarea->finalizado }}</td>
+											<td>{{ $tarea->fecha_inicio }}</td>
+											<td>{{ $tarea->hora_estimada }}</td>
+											<td>{{ $tarea->empleado_id }}</td>
+											<td>{{ $tarea->finalizada }}</td>
 
                                             <td>
                                                 <form action="{{ route('tareas.destroy',$tarea->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('tareas.show',$tarea->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('tareas.edit',$tarea->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('tareas.show',$tarea->id) }}"><i class="fa fa-fw fa-eye"></i> Mostrar</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('tareas.edit',$tarea->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>
                                         </tr>
