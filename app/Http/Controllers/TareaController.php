@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Tarea;
 use App\Models\Empleado;
 use Illuminate\Http\Request;
-
+use DB;
+use Auth;
 
 /**
  * Class TareaController
@@ -51,7 +52,7 @@ class TareaController extends Controller
         $tarea = Tarea::create($request->all());
 
         return redirect()->route('tareas.index')
-            ->with('success', 'Tarea created successfully.');
+            ->with('success', 'Tarea creada satisfactoriamente.');
     }
 
     /**
@@ -110,4 +111,26 @@ class TareaController extends Controller
         return redirect()->route('tareas.index')
             ->with('success', 'Tarea deleted successfully');
     }
+
+    //buscar
+    public function search(Request $request){
+    
+    
+        $fromdate = $request->input('fromDate');
+        $todate = $request->input('toDate');
+
+        $query = DB::table('tareas')->select()
+        ->where('fecha_inicio','>=',$fromdate)
+        ->where('fecha_inicio','<=', $todate)
+        ->get();
+        dd($query);    
+        
+        //$query = \DB::select("SELECT * FROM tareas WHERE fecha_inicio BETWEEN '$fromdate 00:00:00'AND'$todate 23:59:59'");
+    
+       
+        return view('tareas.index', compact('query'));
+    }
+    
+    
+
 }

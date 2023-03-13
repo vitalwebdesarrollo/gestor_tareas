@@ -8,7 +8,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('fecha_inicio') }}
-            {{ Form::date('fecha_inicio', $tarea->fecha_inicio, ['class' => 'form-control' . ($errors->has('fecha_inicio') ? ' is-invalid' : ''), 'placeholder' => 'Fecha Inicio']) }}
+            {{ Form::input('datetime-local', 'fecha_inicio', date('d-m-Y\Th:m:s',  strtotime($tarea->fecha_inicio)), array('class' => 'form-control',)) }}
             {!! $errors->first('fecha_inicio', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -20,20 +20,22 @@
         <!-- Select de lista de los empleados que se vayan creando -->
         <div class="form-group">
             {{ Form::label('Asignado a') }}
-            {{ Form::select('empleado_id', $empleado, $tarea->empleado_id, ['class' => 'form-control' . ($errors->has('empleado_id') ? ' is-invalid' : ''), 'placeholder' => 'Empleado Id']) }}
+            {{ Form::select('empleado_id', $empleado, $tarea->empleado_id, ['class' => 'form-control' . ($errors->has('empleado_id') ? ' is-invalid' : ''), 'placeholder' => 'Seleccionar']) }}
             {!! $errors->first('empleado_id', '<div class="invalid-feedback">:message</div>') !!}  
             
         </div>
 
-
+        
         <div class="form-group">
-            {{ Form::label('finalizada') }}
-            {{ Form::checkbox('finalizada', $tarea->finalizada, ['class' => 'form-control' . ($errors->has('finalizada') ? ' is-invalid' : ''), 'placeholder' => 'Finalizada']) }}
-            {!! $errors->first('finalizada', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-
+            {{ Form::label('Finalizada') }}
+            <div class="form-check {{ $errors->has('finalizada') ? 'is_valid' : ''}}">
+                <input type="checkbox" name="finalizada" id="finalizada" value="1"
+                @checked($tarea-finalizada || old('finalizada', 0 )=== 1)>
+                <label class="form-check-label" for="finalizada"> {{trans('¿Termino la?')}}</label>
+           </div>
+<br>
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </div>
 </div>

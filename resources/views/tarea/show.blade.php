@@ -14,7 +14,7 @@
                             <span class="card-title">Show Tarea</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('tareas.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('tareas.index') }}"> Regresar</a>
                         </div>
                     </div>
 

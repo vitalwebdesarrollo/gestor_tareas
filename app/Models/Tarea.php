@@ -47,4 +47,8 @@ public function empleado(){
   return $this->hasOne('App\Models\Empleado','id','empleado_id');
 }
 
+protected $casts = [
+  'fecha_inicio'  => 'datetime:Y-m-d\TH:i'
+];
+
 }

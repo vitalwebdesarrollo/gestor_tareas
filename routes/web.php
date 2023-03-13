@@ -23,3 +23,4 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/empleados', EmpleadoController::class)->middleware('auth');
 Route::resource('/tareas', TareaController::class)->middleware('auth');
+Route::post('tarea', [TareaController::class,'search'])->name('tarea.search');
